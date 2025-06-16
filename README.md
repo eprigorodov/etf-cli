@@ -32,8 +32,8 @@ pip install build wheel
 2. Clone the GitHub repository and build the package:
 
 ```bash
-git clone https://github.com/unfccc/etf
-cd etf
+git clone https://github.com/unfccc/etf-cli
+cd etf-cli
 python -m build
 ```
 
@@ -60,14 +60,14 @@ Filter out all country data, leaving only related to energy sector, print result
 etf data filter -s energy country_data.json
 ```
 
-Insert missing template grids into the country data:
-```
-etf data fix -r GRIDS country_data.json
-```
-
 Apply all known fixes to satisfy import requirements:
 ```
 etf data fix -r ALL country_data.json
+```
+
+Only insert missing template grids into the country data:
+```
+etf data fix -r GRIDS country_data.json
 ```
 
 Print statistic of country data:
@@ -79,8 +79,8 @@ The tool contains built-in help on commands, available by calling with `--help` 
 
 ## Credits
 
-Special thanks to Pallets Projects, creators of excellent Click Python package.
+Special thanks to [Pallets Projects](https://palletsprojects.com/), creators of excellent [Click Python package](https://palletsprojects.com/projects/click).
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
