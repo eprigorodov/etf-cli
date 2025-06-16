@@ -1,0 +1,40 @@
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unfccc-etf-cli"
+version = "1.0.0"
+authors = [
+    {name = "UNFCCC / ICT / Delivery", email = "eas@unfccc.int" },
+]
+description = "Command-line tools for processing ETF data files"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+dependencies = [
+    "click"
+]
+
+[project.optional-dependencies]
+dev = [
+    "faker",
+    "pytest"
+]
+
+[project.scripts]
+etf = "unfccc.etf.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/unfccc/etf-cli"
+Issues = "https://github.com/unfccc/etf-cli/issues"
+
+[tool.setuptools.packages.find]
+namespaces = true
+where = ["src"]
+
+[tool.setuptools.package-data]
+"unfccc.etf.assets" = ["*.json", "*.lzma"]
