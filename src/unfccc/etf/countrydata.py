@@ -1,3 +1,4 @@
+from copy import deepcopy
 import functools
 import logging
 import secrets
@@ -122,7 +123,7 @@ class CountryData(JSONTree):
         return result
 
     def clone_grid_from_template(self, template_node_uid, node_uid):
-        result = self.get_grid(template_node_uid).copy()
+        result = deepcopy(self.get_grid(template_node_uid))
         result['node_uid'] = node_uid
         for group in self.traverse(result['group']):
             if 'uid' not in group or 'variable_uid' not in group:
